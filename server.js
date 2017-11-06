@@ -6,7 +6,8 @@ const
   mongoose = require('mongoose'),
   app = express(),
   MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/podfreq',
-  PORT = process.env.PORT || 3001
+  PORT = process.env.PORT || 3001,
+  usersRoutes = require('./routes/users.js')
 ;
 
 mongoose.connect(MONGODB_URI, (err) => {
@@ -19,6 +20,8 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => {
   res.json({message: "API root."})
 })
+
+app.use('/users', usersRoutes)
 
 app.listen(PORT, (err) => {
   console.log(err || `🤘🏾 Server running on ${PORT}`)

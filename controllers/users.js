@@ -1,6 +1,7 @@
-const User = require('..models/User.js')
+const User = require('../models/User.js')
 
 module.exports = {
+  
   index: (req, res) => {
     User.find({}, (err, users) => {
       if (err) console.log(err)
