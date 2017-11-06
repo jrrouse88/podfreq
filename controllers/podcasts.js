@@ -4,7 +4,7 @@ module.exports = {
   index: (req, res) => {
     Podcast.find({}, (err, podcasts) => {
       if (err) console.log(err)
-      res.json(podcast)
+      res.json(podcasts)
     })
   },
 
