@@ -18,7 +18,7 @@ module.exports = {
   create: (req, res) => {
     Podcast.create(req.body, (err, podcast) => {
       if (err) return res.json({success: false, code: err.code})
-      res.json({success: true, message: "User created.", podcast})
+      res.json({success: true, message: "Podcast created.", podcast})
     })
   },
 
