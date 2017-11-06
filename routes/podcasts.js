@@ -4,12 +4,8 @@ const
   podcastsCtrl = require('../controllers/podcasts.js')
 ;
 
-podcastsRouter.route('/')
-  .get(podcastsCtrl.index)
-;
+podcastsRouter.get('/', podcastsCtrl.index)
 
-podcastsRouter.route('/:castId')
-  .get(podcastsCtrl.show)
-;
+podcastsRouter.get('/:castId', podcastsCtrl.show)
 
 module.exports = podcastsRouter
