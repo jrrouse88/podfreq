@@ -1,8 +1,7 @@
 const
   express = require('express'),
   episodesRouter = new express.Router(),
-  episodesCtrl = require('../controllers/episodes.js'),
-
+  episodesCtrl = require('../controllers/episodes.js')
 ;
 
 episodesRouter.get('/', episodesCtrl.index)
