@@ -10,7 +10,6 @@ podcastsRouter.route('/')
 
 podcastsRouter.route('/:castId')
   .get(podcastsCtrl.show)
-  .delete(podcastsCtrl.destroy)
 ;
 
 module.exports = podcastsRouter
