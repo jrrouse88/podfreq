@@ -9,21 +9,23 @@ module.exports = {
   },
 
   show: (req, res) => {
-    Podcast.findById(req.params.id, (err, podcast) => {
+    Podcast.findById(req.params.castId, (err, podcast) => {
       if (err) console.log(err)
       res.json(podcast)
     })
   },
 
   create: (req, res) => {
-    Podcast.create(req.body, (err, podcast) => {
-      if (err) return res.json({success: false, code: err.code})
+    var newPodcast = new Podcast(req.body)
+    newPodcast.user = req.params.id
+    newPodcast.save((err, podcast) => {
+      if (err) res.json({success: false, code: err.code})
       res.json({success: true, message: "Podcast created.", podcast})
     })
   },
 
   update: (req, res) => {
-    Podcast.findById(req.params.id, (err, podcast) => {
+    Podcast.findById(req.params.castId, (err, podcast) => {
       Object.assign(podcast, req.body)
       podcast.save((err, updatedPod) => {
         if (err) res.json({success: false, code: err.code})
@@ -33,7 +35,7 @@ module.exports = {
   },
 
   destroy: (req, res) => {
-    Podcast.findByIdAndRemove(req.params.id, (err, podcast) => {
+    Podcast.findByIdAndRemove(req.params.castId, (err, podcast) => {
       if (err) res.json({success: false, code: err.code})
       res.json({success: true, message: "Podcast deleted."})
     })

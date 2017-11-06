@@ -6,12 +6,10 @@ const
 
 podcastsRouter.route('/')
   .get(podcastsCtrl.index)
-  .post(podcastsCtrl.create)
 ;
 
 podcastsRouter.route('/:castId')
   .get(podcastsCtrl.show)
-  .patch(podcastsCtrl.update)
   .delete(podcastsCtrl.destroy)
 ;
 
