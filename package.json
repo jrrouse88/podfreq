@@ -2,7 +2,7 @@
   "name": "podfreq",
   "version": "1.0.0",
   "description": "podfreq server",
-  "main": "index.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/jrrouse88/podfreq.git"
