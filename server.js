@@ -7,7 +7,8 @@ const
   app = express(),
   MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/podfreq',
   PORT = process.env.PORT || 3001,
-  usersRoutes = require('./routes/users.js')
+  usersRoutes = require('./routes/users.js'),
+  podcastRoutes = require('./routes/podcasts.js')
 ;
 
 mongoose.connect(MONGODB_URI, (err) => {
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/users', usersRoutes)
+app.use('/podcasts', podcastRoutes)
 
 app.listen(PORT, (err) => {
   console.log(err || `🤘🏾 Server running on ${PORT}`)
