@@ -11,13 +11,14 @@ class SignUp extends Component {
       avatar: ''
     }
   }
-
+  
   onFormSubmit(evt) {
     evt.preventDefault()
     axios({method: 'post', url:'/users', data: this.state.fields})
       .then(res => {
-        //console.log(this.state)
-        console.log(res.data)
+        //console.log(this.state.fields)
+        //console.log(res.data)
+        this.props.history.push('/hosts')
       })
   }
 
