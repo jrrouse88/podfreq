@@ -20,7 +20,7 @@ class Hosts extends Component {
           console.log(host)
           return (
             <section key={host._id}>
-              <img src={host.avatar} />
+              <img src={host.avatar} alt=""/>
               <h2>{host.userName}</h2>
             </section>
           )
