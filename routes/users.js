@@ -2,7 +2,8 @@ const
   express = require('express'),
   usersRouter = new express.Router(),
   usersCtrl = require('../controllers/users.js'),
-  podcastsCtrl = require('../controllers/podcasts.js')
+  podcastsCtrl = require('../controllers/podcasts.js'),
+  verifyToken = require('../serverAuth.js')
 ;
 
 usersRouter.route('/')
@@ -10,6 +11,7 @@ usersRouter.route('/')
   .post(usersCtrl.create)
 ;
 
+usersRouter.use(verifyToken)
 usersRouter.route('/:id')
   .get(usersCtrl.show)
   .patch(usersCtrl.update)
