@@ -3,7 +3,7 @@ const
   usersRouter = new express.Router(),
   usersCtrl = require('../controllers/users.js'),
   podcastsCtrl = require('../controllers/podcasts.js'),
-  verifyToken = require('../serverAuth.js')
+  verifyToken = require('../serverAuth.js').verifyToken
 ;
 
 usersRouter.route('/')
