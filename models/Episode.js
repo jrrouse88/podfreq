@@ -9,6 +9,7 @@ episodeSchema = new mongoose.Schema({
   description: String,
   length: Number,
   thumbnail: String,
+  src: {type: String, required: true},
   podcast: {type: mongoose.Schema.Types.ObjectId, ref: 'Podcast'},
   comments: [commentSchema]
 })

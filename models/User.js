@@ -4,10 +4,9 @@ const
   userSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
-    userName: {type: String, unique: true},
-    email: {type: String, required: true, unique: true},
+    email: {type: String, unique: true},
     password: {type: String, required: true},
-    avatar: String
+    avatar: {type: String, default: "http://i0.wp.com/cdn.techgyd.com/save-whatsapp-profile-picture-image3.jpg"}
   })
 ;
 
