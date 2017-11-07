@@ -6,7 +6,6 @@ class SignUp extends Component {
     fields: {
       firstName: '',
       lastName: '',
-      userName: '',
       email: '',
       password: '',
       avatar: ''
@@ -17,12 +16,13 @@ class SignUp extends Component {
     evt.preventDefault()
     axios({method: 'post', url:'/users', data: this.state.fields})
       .then(res => {
+        //console.log(this.state)
         console.log(res.data)
       })
   }
 
   onInputChange(evt) {
-    console.log(evt.target)
+    // console.log(evt.target)
     this.setState({
       fields: {
         ...this.state.fields,
@@ -38,7 +38,6 @@ class SignUp extends Component {
         <form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
           <input type="text" placeholder="First Name" name="firstName"/>
           <input type="text" placeholder="Last Name" name="lastName"/>
-          <input type="text" placeholder="Username" name="userName"/>
           <input type="text" placeholder="Email" name="email"/>
           <input type="password" placeholder="Password" name="password"/>
           <input type="text" placeholder="Profile Picture" name="avatar"/>

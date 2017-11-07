@@ -21,7 +21,7 @@ class Hosts extends Component {
           return (
             <section key={host._id}>
               <img src={host.avatar} alt=""/>
-              <h2>{host.userName}</h2>
+              <h2>{host.firstName}{host.lastName}</h2>
             </section>
           )
         })}
