@@ -7,6 +7,7 @@ import LogIn from './views/LogIn'
 import Shows from './views/Shows'
 import Hosts from './views/Hosts'
 import SignUp from './views/SignUp'
+import Profile from './views/Profile'
 
 class App extends Component {
   state = { currentUser: null }
@@ -39,6 +40,11 @@ class App extends Component {
         <Route path="/podcasts" component={Shows}/>
         <Route path="/hosts" component={Hosts} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/profile" render={() => {
+          return currentUser
+          ? <Profile />
+          : <Redirect to="/login" />
+        }} />
       </div>
     );
   }
