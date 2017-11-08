@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
 
-class Shows extends React.Component {
+class Shows extends Component {
   state = {
     shows: []
   }

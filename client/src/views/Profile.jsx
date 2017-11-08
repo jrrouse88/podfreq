@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import clientAuth from '../clientAuth.js'
 import axios from 'axios'
 
+import MyShows from './MyShows.jsx'
+
 class Profile extends Component {
   state = { 
     currentUser: clientAuth.getCurrentUser(),
@@ -41,6 +43,7 @@ class Profile extends Component {
       <div className="profileContainer">
         <p>Hi, {currentUser.firstName}</p>
         <img src={currentUser.avatar} alt="" />
+        <MyShows />
         <div className="addPodcast">
           <form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
             <h1>Add A Show</h1>
