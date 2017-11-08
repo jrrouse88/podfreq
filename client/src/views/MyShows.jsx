@@ -24,8 +24,13 @@ class MyShows extends Component {
         {shows.map(show => {
           return (
             currentUser._id === show.user
-            ? <section key={show._id}>{show.title}</section>
-            : null
+            ? 
+              <section key={show._id}>
+                <p>{show.title}</p>
+                <img src={show.art} alt='' />
+              </section>
+            : 
+              null
           )
         })}
       </div>
