@@ -39,9 +39,7 @@ function logIn(credentials) {
 }
 
 function logOut() {
-  // remove from local storage
   localStorage.removeItem('token')
-  // delete key from axios request
   delete clientAuth.defaults.headers.common.token
   return true
 }

@@ -1,4 +1,5 @@
 const User = require('../models/User.js')
+const signToken = require('../serverAuth.js').signToken
 
 module.exports = {
   
