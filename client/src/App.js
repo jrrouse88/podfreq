@@ -34,17 +34,19 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Route path="/login" render={(props) => {
-						return <LogIn {...props} onLoginSuccess={this.onLoginSuccess.bind(this)} />
-					}} />
-        <Route path="/podcasts" component={Shows}/>
-        <Route path="/hosts" component={Hosts} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/profile" render={() => {
-          return currentUser
-          ? <Profile />
-          : <Redirect to="/login" />
-        }} />
+        <Switch>
+          <Route path="/login" render={(props) => {
+              return <LogIn {...props} onLoginSuccess={this.onLoginSuccess.bind(this)} />
+            }} />
+          <Route path="/podcasts" component={Shows}/>
+          <Route path="/hosts" component={Hosts} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/profile" render={() => {
+            return currentUser
+            ? <Profile />
+            : <Redirect to="/login" />
+          }} />
+        </Switch>
       </div>
     );
   }
