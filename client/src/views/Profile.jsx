@@ -5,6 +5,7 @@ import axios from 'axios'
 class Profile extends Component {
   state = { 
     currentUser: clientAuth.getCurrentUser(),
+    podcasts: [],
     fields: {
       title: '',
       description: '',
@@ -12,6 +13,7 @@ class Profile extends Component {
       art: ''
     }
   }
+
 
   onInputChange(evt) {
     // console.log(evt.target)
@@ -22,22 +24,23 @@ class Profile extends Component {
       }
     })
   }
-
+  
   onFormSubmit(evt) {
     evt.preventDefault()
     axios({method: 'post', url:`/users/${this.state.currentUser._id}/podcasts`, data: this.state.fields})
       .then(res => {
         //console.log(this.state.fields)
-        console.log(res.data)
-        //this.props.history.push('/profile')
+        //console.log(res.data)
+        this.props.history.push('/profile')
       })
   }
 
   render() {
-    //console.log(this.state.currentUser)
+    const { currentUser } = this.state
     return (
       <div className="profileContainer">
-        <img src={this.state.currentUser.avatar} alt="" />
+        <p>Hi, {currentUser.firstName}</p>
+        <img src={currentUser.avatar} alt="" />
         <div className="addPodcast">
           <form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
             <h1>Add A Show</h1>
