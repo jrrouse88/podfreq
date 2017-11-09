@@ -10,20 +10,17 @@ const options = {
     * @param {String } audioLists.cover  audio cover  [ required ]
     * @param {String } audioLists.musicSrc  audio music source  [ required ]
    */
-   audioLists: [{
-       name: "丑",
-       singer: "草东没有派对",
-       cover: "http://www.lijinke.cn/music/1387583682387727.jpg",
-       musicSrc: "http://www.lijinke.cn/music/201711082.mp3"
-   }],
+   audioLists: [
+    {}
+    ],
 
    //color of the music player theme    [ type `string: 'light' or 'drak'  ` default 'drak' ]
    theme:"drak",
    
    //audio controller initial position    [ type `Object` default '{top:0,left:0}' ]
    defaultPosition:{
-       top:120,
-       left:120
+       top:600,
+       left:0
    },
 
    //play mode text config of the audio player
@@ -41,16 +38,16 @@ const options = {
    closeText: "CLOSE",
 
    //audio theme switch checkedText  [ type `String | ReactNode` default '-']
-   checkedText:"开",
+   checkedText:"L",
 
    //audio theme switch unCheckedText [ type `String | ReactNode` default '-']
-   unCheckedText:"关",
+   unCheckedText:"D",
 
    //default play mode of the audio player options 'order' 'orderLoop' 'singleLoop' 'shufflePlay' [ type `String` default 'order' ]
-   defaultPlayMode:"order",
+   defaultPlayMode:"singleLoop",
 
    //audio mode        mini | full          [type `String`  default `mini`]  
-   mode: "mini",
+   mode: "full",
 
    /**
     * [ type `Boolean` default 'false' ]
@@ -59,10 +56,10 @@ const options = {
    once: false,
 
    //Whether you can switch between two modes, full => mini  or mini => full   [type 'Bollean' default 'true']
-   toggleMode:true,
+   toggleMode:false,
 
    //audio cover is show of the "mini" mode [type `Boolean` default 'true']
-   showMiniModeCover:true,
+   showMiniModeCover:false,
 
    //audio controller is can be drag of the "mini" mode     [type `Boolean` default `true`]
    drag: true,
@@ -77,7 +74,7 @@ const options = {
    showReload: true,
 
    //dowload button display of the audio player panel   [type `Boolean` default `true`]
-   showDowload: true,
+   showDowload: false,
 
    //loop button display of the audio player panel   [type `Boolean` default `true`]
    showPlayMode: true,
