@@ -46,7 +46,7 @@ class Profile extends Component {
         <MyShows />
         <div className="addPodcast">
           <form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-            <h1>Add A Show</h1>
+            <h1 className="title">Add A Show</h1>
             <input type="text" placeholder="Title" name="title" />
             <input type="text" placeholder="Description" name="description" />
             <input type="text" placeholder="Category" name="category" />
