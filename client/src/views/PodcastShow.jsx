@@ -4,6 +4,7 @@ import axios from 'axios'
 class PodcastShow extends Component {
   constructor(props) {
     super()
+    this.state = {}
   }
 
   componentDidMount() {
@@ -18,10 +19,15 @@ class PodcastShow extends Component {
   }
 
   render() {
-    console.log(this.state)
+    //console.log(this.state.podcast)
+    const { podcast } = this.state
+    console.log(podcast)
+    //console.log(this.state.episodes)
+    const { episodes } = this.state
     return (
-      <div>
-        This is 
+      <div className="show-container">
+        <div>
+        </div>
       </div>
     )
   }
