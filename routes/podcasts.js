@@ -18,8 +18,8 @@ function matchUserToEpisodeOwner(req, res, next) {
 }
 
 // verify token must happen before matching the user this way...
-//podcastsRouter.use(verifyToken)
-//podcastsRouter.use(matchUserToEpisodeOwner)
+podcastsRouter.use(verifyToken)
+podcastsRouter.use(matchUserToEpisodeOwner)
 podcastsRouter.post('/:castId/episodes', episodesCtrl.create)
 
 podcastsRouter.route('/:castId/episodes/:episodeId')
