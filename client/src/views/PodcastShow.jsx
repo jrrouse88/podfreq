@@ -21,7 +21,6 @@ class PodcastShow extends Component {
   render() {
     //console.log(this.state.podcast)
     const { podcast } = this.state
-    console.log(podcast)
     //console.log(this.state.episodes)
     const { episodes } = this.state
     return (
