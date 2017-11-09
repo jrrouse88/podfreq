@@ -1,19 +1,11 @@
 import React from 'react'
+import ReactJkMusicPlayer from 'react-jinke-music-player'
+import 'react-jinke-music-player/assets/index.css'
 import FaHeadphones from "react-icons/lib/fa/headphones"
+// import options from './options'
+
 
 const options = {
-   /**
-    * audio lists model
-    * @param {Array} audioLists 
-    * @param {String | ReactNode } audioLists.name  audio name  [ required ]
-    * @param {String | ReactNode } audioLists.singer  singer name of the playing song  [ not required ]
-    * @param {String } audioLists.cover  audio cover  [ required ]
-    * @param {String } audioLists.musicSrc  audio music source  [ required ]
-   */
-   audioLists: [
-    {}
-    ],
-
    //color of the music player theme    [ type `string: 'light' or 'drak'  ` default 'drak' ]
    theme:"drak",
    
@@ -131,4 +123,11 @@ const options = {
    }
 }
 
-export default options
+
+const MediaPlayer = (props) => {
+  return (
+    <ReactJkMusicPlayer {...options} audioLists={props.playlist}  />
+  )
+}
+
+export default MediaPlayer
