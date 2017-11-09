@@ -16,11 +16,16 @@ module.exports = {
   //   })
   // },
   show: (req, res) => {
-    Podcast.findById(req.params.castId).
-      populate('episodes').
-        exec((err, podcast) => {
-          if (err) console.log(err)
-          res.json(podcast)
+    Podcast.findById(req.params.castId, (err, podcast) => {
+      Episode.find({podcast: req.params.castId}, (err, episodes) => {
+        if (err) console.log(err)
+        res.json(
+          {
+            podcast: podcast,
+            episodes: episodes
+          }
+        )
+      })
     })
   },
 
