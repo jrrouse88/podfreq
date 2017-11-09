@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+//import ShowComponent from './ShowComponent.jsx'
+
 class PodcastShow extends Component {
   constructor(props) {
     super()
-    this.state = {}
+    this.state = { podcast: null }
   }
 
   componentDidMount() {
@@ -21,13 +23,21 @@ class PodcastShow extends Component {
   render() {
     //console.log(this.state.podcast)
     const { podcast } = this.state
+    if(!podcast) {
+      return (
+        <div>Loading</div>
+      )
+    }
+
+
+    console.log(podcast.title)
+
+
     //console.log(this.state.episodes)
     const { episodes } = this.state
+    console.log(episodes)
     return (
-      <div className="show-container">
-        <div>
-        </div>
-      </div>
+      <div></div>
     )
   }
 }
