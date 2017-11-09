@@ -3,7 +3,6 @@ import axios from 'axios'
 
 class PodcastShow extends Component {
   componentDidMount() {
-    axios({method: 'get', url: `/podcasts/${}`})
   }
 
   render() {
