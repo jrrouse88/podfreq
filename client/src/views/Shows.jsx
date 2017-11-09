@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 class Shows extends Component {
@@ -21,7 +22,7 @@ class Shows extends Component {
         {this.state.shows.map(show => {
           return (
             <section key={show._id}>
-              <h2>{show.title}</h2>
+              <Link to={`/podcasts/${show._id}`}><h2>{show.title}</h2></Link>
               <img src={show.art} alt=""/>
               <p>Description: {show.description}</p>
             </section>
