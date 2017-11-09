@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import clientAuth from './clientAuth'
+import './App.css'
 
 import NavBar from './NavBar.jsx'
 import LogIn from './views/LogIn'

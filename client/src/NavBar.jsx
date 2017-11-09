@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const NavBar = (props) => {
   return (
-    <div className='navbar is-fixed-top is-black'>
+    <div className='navbar'>
       <Link to="/" className="navbar-brand">PodFreq</Link>
       <div className="navbar-menu">
         <div className="navbar-end">
