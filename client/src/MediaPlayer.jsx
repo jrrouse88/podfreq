@@ -36,7 +36,7 @@ const options = {
    unCheckedText:"D",
 
    //default play mode of the audio player options 'order' 'orderLoop' 'singleLoop' 'shufflePlay' [ type `String` default 'order' ]
-   defaultPlayMode:"singleLoop",
+   defaultPlayMode:"order",
 
    //audio mode        mini | full          [type `String`  default `mini`]  
    mode: "full",
