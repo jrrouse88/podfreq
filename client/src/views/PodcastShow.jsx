@@ -49,8 +49,7 @@ class PodcastShow extends Component {
                 <button onClick={() => this.props.onPlayClick({
                   cover: episode.art || episode.cover,
                   name: episode.title || episode.name,
-                  musicSrc: episode.src || episode.musicSrc,
-                  volume: 100,
+                  musicSrc: episode.src || episode.musicSrc
                 })}></button>
               </div>
             </section>
