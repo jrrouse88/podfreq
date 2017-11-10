@@ -10,14 +10,15 @@ class PodcastShow extends Component {
   }
 
   componentDidMount() {
-    axios({method: 'get', url: `${this.props.location.pathname}`})
-      .then(res => {
+    console.log(this)
+   // axios({method: 'get', url: `${this.props.location.pathname}`})
+     // .then(res => {
         //console.log(res.data)
-        this.setState({
-          podcast: res.data.podcast,
-          episodes: res.data.episodes
-        })
-      })
+       // this.setState({
+         // podcast: res.data.podcast,
+         // episodes: res.data.episodes
+       // })
+      //})
   }
 
   render() {
