@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-//import ShowComponent from './ShowComponent.jsx'
-
 class PodcastShow extends Component {
   constructor(props) {
     console.log(props)
@@ -29,18 +27,33 @@ class PodcastShow extends Component {
         <div>Loading</div>
       )
     }
-
-
-    console.log(podcast.title)
-
-
+    //console.log(podcast.title)
     //console.log(this.state.episodes)
     const { episodes } = this.state
-    console.log(episodes)
+    //console.log(episodes)
     return (
-      <div>
-        This is 
-        <button onClick={() => this.props.onPlayClick({
+      <div className="viewContainer">
+        <header className="cast-header">
+          <img src={podcast.art} alt="" />
+          <h1>{podcast.title}</h1>
+        </header>
+        {episodes.map(episode => {
+          return (
+            <section key={episode._id}>
+              <aside className="episodeArt">
+                <img src={episode.cover} alt=""/>
+              </aside>
+              <div>
+                <h1>{episode.name}</h1>
+                <h2>{episode.desciption}</h2>
+                <button onClick={() => this.props.onPlayClick({
+
+                })}></button>
+              </div>
+            </section>
+          )
+        })}
+        {/* <button onClick={() => this.props.onPlayClick({
           cover:"http://www.lijinke.cn/music/1387583682387727.jpg",
           currentTime:10.211519,
           duration:164.211519,
@@ -54,7 +67,7 @@ class PodcastShow extends Component {
           ended:false,
           startDate:null,
           played:{length:1}
-      })}></button>
+      })}></button> */}
       </div>
     )
   }
