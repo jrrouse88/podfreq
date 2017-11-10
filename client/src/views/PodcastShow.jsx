@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import clientAuth from '../clientAuth'
+import AddEpisode from './AddEpisode'
+
 class PodcastShow extends Component {
   constructor(props) {
     console.log(props)
     super()
-    this.state = { podcast: null }
+    this.state = { 
+      podcast: null,
+      currentUser: clientAuth.getCurrentUser()
+    }
   }
 
   componentDidMount() {
@@ -32,10 +38,10 @@ class PodcastShow extends Component {
     const { episodes } = this.state
     //console.log(episodes)
     return (
-      <div className="viewContainer">
-        <header className="cast-header">
+      <div className="container">
+        <header className="castHeader">
           <img src={podcast.art} alt="" />
-          <h1>{podcast.title}</h1>
+          <h1 className="title is-1">{podcast.title}</h1>
         </header>
         {episodes.map(episode => {
           return (
@@ -43,14 +49,14 @@ class PodcastShow extends Component {
               <aside className="episodeArt">
                 <img src={episode.cover} alt=""/>
               </aside>
-              <div>
-                <h1>{episode.name || episode.title}</h1>
-                <h2>{episode.description}</h2>
-                <button onClick={() => this.props.onPlayClick({
+              <div className="level">
+              <button onClick={() => this.props.onPlayClick({
                   cover: episode.art || episode.cover,
                   name: episode.title || episode.name,
                   musicSrc: episode.src || episode.musicSrc
-                })}></button>
+                })} className="button">▶︎</button>
+                <h1 className="level-item">{episode.name || episode.title}</h1>
+                <h2 className="level-item">{episode.description}</h2>
               </div>
             </section>
           )
