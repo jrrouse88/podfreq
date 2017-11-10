@@ -44,10 +44,13 @@ class PodcastShow extends Component {
                 <img src={episode.cover} alt=""/>
               </aside>
               <div>
-                <h1>{episode.name}</h1>
-                <h2>{episode.desciption}</h2>
+                <h1>{episode.name || episode.title}</h1>
+                <h2>{episode.description}</h2>
                 <button onClick={() => this.props.onPlayClick({
-
+                  cover: episode.art || episode.cover,
+                  name: episode.title || episode.name,
+                  musicSrc: episode.src || episode.musicSrc,
+                  volume: 100,
                 })}></button>
               </div>
             </section>
