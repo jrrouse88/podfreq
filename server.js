@@ -16,6 +16,7 @@ mongoose.connect(MONGODB_URI, (err) => {
   console.log(err || `🖖🏾 Connected to MongoDB @ ${MONGODB_URI}`)
 })
 
+app.use(express.static(`${__dirname}/client/build`))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 
@@ -26,6 +27,10 @@ app.get('/', (req, res) => {
 app.use('/users', usersRoutes)
 app.use('/podcasts', podcastRoutes)
 app.use('/episodes', episodeRoutes)
+
+app.use('*', (req, res) => {
+	res.sendFile(`${__dirname}/client/build/index.html`)
+})
 
 app.listen(PORT, (err) => {
   console.log(err || `🤘🏾 Server running on ${PORT}`)
