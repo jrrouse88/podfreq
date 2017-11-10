@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import clientAuth from './clientAuth'
 import './App.css'
 
+import Home from './views/Home'
 import NavBar from './NavBar.jsx'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
@@ -68,6 +69,7 @@ class App extends Component {
             ? <Profile />
             : <Redirect to="/login" />
           }} />
+          <Route path="/" component={Home} />
         </Switch>
 
         {this.state.playlist.length
