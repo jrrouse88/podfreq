@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import clientAuth from '../clientAuth'
+import AddEpisode from './AddEpisode'
+
 class PodcastShow extends Component {
   constructor(props) {
     console.log(props)
     super()
-    this.state = { podcast: null }
+    this.state = { 
+      podcast: null,
+      currentUser: clientAuth.getCurrentUser()
+    }
   }
 
   componentDidMount() {
