@@ -17,6 +17,7 @@ class App extends Component {
     currentUser: null,
     playlist: [],
   }
+  
 
   componentDidMount() {
     this.setState({
@@ -52,8 +53,8 @@ class App extends Component {
           <Route path="/login" render={(props) => {
               return <LogIn {...props} onLoginSuccess={this.onLoginSuccess.bind(this)} />
             }} />
-          <Route path="/podcasts/:castId" render={() => {
-            return <PodcastShow onPlayClick={this.setPlaylist.bind(this)} />
+          <Route path="/podcasts/:castId" render={(props) => {
+            return <PodcastShow {...props} onPlayClick={this.setPlaylist.bind(this)} />
           }} />
           <Route path="/podcasts" component={Shows}/>
           <Route path="/hosts" component={Hosts} />

@@ -5,20 +5,20 @@ import axios from 'axios'
 
 class PodcastShow extends Component {
   constructor(props) {
+    console.log(props)
     super()
     this.state = { podcast: null }
   }
 
   componentDidMount() {
-    console.log(this)
-   // axios({method: 'get', url: `${this.props.location.pathname}`})
-     // .then(res => {
-        //console.log(res.data)
-       // this.setState({
-         // podcast: res.data.podcast,
-         // episodes: res.data.episodes
-       // })
-      //})
+   axios({method: 'get', url: `${this.props.location.pathname}`})
+     .then(res => {
+        console.log(res.data)
+       this.setState({
+         podcast: res.data.podcast,
+         episodes: res.data.episodes
+       })
+      })
   }
 
   render() {
