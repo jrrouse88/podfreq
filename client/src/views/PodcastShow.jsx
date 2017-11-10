@@ -37,7 +37,6 @@ class PodcastShow extends Component {
     const { episodes } = this.state
     console.log(episodes)
     return (
-<<<<<<< HEAD
       <div>
         This is 
         <button onClick={() => this.props.onPlayClick({
@@ -56,9 +55,6 @@ class PodcastShow extends Component {
           played:{length:1}
       })}></button>
       </div>
-=======
-      <div></div>
->>>>>>> show-view
     )
   }
 }
