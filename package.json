@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "podfreq server",
   "main": "server.js",
+  "engines": {
+    "node": "8.4.0"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jrrouse88/podfreq.git"
