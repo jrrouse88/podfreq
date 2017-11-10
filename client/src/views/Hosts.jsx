@@ -15,7 +15,7 @@ class Hosts extends Component {
 
   render() {
     return (
-      <div className="container is-flex-desktop">
+      <div className="container is-flex-desktop space-between">
         {this.state.hosts.map(host => {
           //console.log(host)
           return (

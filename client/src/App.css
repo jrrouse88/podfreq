@@ -1,3 +1,39 @@
+/**************************
+Host Styles
+**************************/
 .hosts img{
-  max-height: 300px;
+  max-height: 200px;
+  padding-top: 20px;
+}
+
+.space-between {
+  justify-content: space-around; 
+}
+
+/**************************
+Show List Styles
+**************************/
+.show img {
+  max-height: 200px;
+}
+
+/**************************
+Show View Styles
+**************************/
+.castHeader img {
+  max-height: 250px;
+}
+
+.castHeader h1 {
+  float: right;
+}
+
+.level button {
+  border-radius: 50%;
+}
+/**************************
+Player Styles
+**************************/
+.player {
+  padding-top: 10px;
 }

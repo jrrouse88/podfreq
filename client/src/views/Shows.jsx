@@ -18,13 +18,15 @@ class Shows extends Component {
   render() {
     console.log(this.state.shows)
     return (
-      <div className="showContainer">
+      <div className="tile is-parent">
         {this.state.shows.map(show => {
           return (
-            <section key={show._id}>
-              <Link to={`/podcasts/${show._id}`}><h2>{show.title}</h2></Link>
-              <img src={show.art} alt=""/>
-              <p>Description: {show.description}</p>
+            <section key={show._id} className="tile is-child notification">
+              <Link to={`/podcasts/${show._id}`} className="level-item"><h2>{show.title}</h2></Link>
+              <figure className="image is-4by3">
+                <img src={show.art} alt="" className="level-item"/>
+              </figure>
+              <p className="level-item">Description: {show.description}</p>
             </section>
           )
         })}
