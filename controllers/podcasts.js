@@ -1,4 +1,5 @@
 const Podcast = require('../models/Podcast.js')
+const Episode = require('../models/Episode.js')
 
 module.exports = {
   index: (req, res) => {
@@ -8,10 +9,23 @@ module.exports = {
     })
   },
 
+  // show: (req, res) => {
+  //   Podcast.findById(req.params.castId, (err, podcast) => {
+  //     if (err) console.log(err)
+  //     res.json(podcast)
+  //   })
+  // },
   show: (req, res) => {
     Podcast.findById(req.params.castId, (err, podcast) => {
-      if (err) console.log(err)
-      res.json(podcast)
+      Episode.find({podcast: req.params.castId}, (err, episodes) => {
+        if (err) console.log(err)
+        res.json(
+          {
+            podcast: podcast,
+            episodes: episodes
+          }
+        )
+      })
     })
   },
 

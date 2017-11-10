@@ -5,6 +5,7 @@ const
     description: String,
     category: String,
     art: String,
+    episodes: [{type: mongoose.Schema.Types.ObjectId, ref: 'Episode'}],
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
   })
 ;

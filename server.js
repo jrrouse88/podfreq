@@ -1,5 +1,5 @@
 const
-  dotenv = require('dotenv'),
+  dotenv = require('dotenv').load(),
   express = require('express'),
   logger = require('morgan'),
   bodyParser = require('body-parser'),

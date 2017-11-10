@@ -19,8 +19,12 @@ module.exports = {
     var newEpisode = new Episode(req.body)
     newEpisode.podcast = req.params.castId
     newEpisode.save((err, episode) => {
-      if (err) res.json({success: false, code: err.code})
-      res.json({success: true, message: "Episode added.", episode})
+      if (err) {
+        res.json({success: false, code: err.code})
+      } else {
+        newEpisode.podcast.episode = newEpisode
+        res.json({success: true, message: "Episode added.", episode})
+      }
     })
   },
 

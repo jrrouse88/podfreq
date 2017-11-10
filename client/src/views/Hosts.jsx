@@ -15,13 +15,19 @@ class Hosts extends Component {
 
   render() {
     return (
-      <div className="hostsContainer">
+      <div className="container is-flex-desktop">
         {this.state.hosts.map(host => {
-          console.log(host)
+          //console.log(host)
           return (
-            <section key={host._id}>
-              <img src={host.avatar} alt=""/>
-              <h2>{host.firstName} {host.lastName}</h2>
+            <section key={host._id} className="hosts">
+              <div className="">
+                <figure className="">
+                  <img src={host.avatar} alt=""/>
+                </figure>
+              </div>
+              <div className="">
+                <h2>{host.firstName} {host.lastName}</h2>
+              </div>
             </section>
           )
         })}
