@@ -10,7 +10,7 @@ class PodcastShow extends Component {
     super()
     this.state = { 
       podcast: null,
-      currentUser: clientAuth.getCurrentUser()
+      currentUser: null
     }
   }
 
@@ -20,7 +20,8 @@ class PodcastShow extends Component {
         console.log(res.data)
        this.setState({
          podcast: res.data.podcast,
-         episodes: res.data.episodes
+         episodes: res.data.episodes,
+         currentUser: clientAuth.getCurrentUser()
        })
       })
   }
@@ -36,9 +37,18 @@ class PodcastShow extends Component {
     //console.log(podcast.title)
     //console.log(this.state.episodes)
     const { episodes } = this.state
-    //console.log(episodes)
+    const { currentUser } = this.state
+    //console.log(currentUser._id)
+    //console.log(podcast.user)
     return (
       <div className="container">
+        <div>
+          {
+            currentUser._id === podcast.user
+            ? < AddEpisode />
+            : null
+          }
+        </div>
         <header className="castHeader">
           <img src={podcast.art} alt="" />
           <h1 className="title is-1">{podcast.title}</h1>
