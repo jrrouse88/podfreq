@@ -44,8 +44,8 @@ class PodcastShow extends Component {
     } else {
       add = null
     }
-    console.log(currentUser._id)
-    console.log(podcast.user)
+    //console.log(currentUser._id)
+    //console.log(podcast.user)
     return (
       <div className="container">
       {add}
