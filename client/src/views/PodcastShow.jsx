@@ -6,21 +6,22 @@ import AddEpisode from './AddEpisode'
 
 class PodcastShow extends Component {
   constructor(props) {
-    console.log(props)
+    //console.log(props)
     super()
     this.state = { 
       podcast: null,
-      currentUser: clientAuth.getCurrentUser()
+      currentUser: null
     }
   }
 
   componentDidMount() {
    axios({method: 'get', url: `${this.props.location.pathname}`})
      .then(res => {
-        console.log(res.data)
+        //console.log(res.data)
        this.setState({
          podcast: res.data.podcast,
-         episodes: res.data.episodes
+         episodes: res.data.episodes,
+         currentUser: clientAuth.getCurrentUser()
        })
       })
   }
@@ -36,9 +37,18 @@ class PodcastShow extends Component {
     //console.log(podcast.title)
     //console.log(this.state.episodes)
     const { episodes } = this.state
-    //console.log(episodes)
+    const { currentUser } = this.state
+    let add = null
+    if(currentUser) {
+      add = <AddEpisode {...this.state} />
+    } else {
+      add = null
+    }
+    //console.log(currentUser._id)
+    //console.log(podcast.user)
     return (
       <div className="container">
+      {add}
         <header className="castHeader">
           <img src={podcast.art} alt="" />
           <h1 className="title is-1">{podcast.title}</h1>
