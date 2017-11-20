@@ -4,11 +4,7 @@ import axios from 'axios'
 class AddEpisode extends Component {
   
   render() {
-    const { currentUser } = this.props
-    const { podcast } = this.props
     return(
-      currentUser._id === podcast.user
-      ?
         <div>
           <h2>Add An Episode</h2>
           <form>
@@ -19,8 +15,6 @@ class AddEpisode extends Component {
             <button>Add Episode</button>
           </form>
         </div>
-      :
-        null
     )
   }
 }
