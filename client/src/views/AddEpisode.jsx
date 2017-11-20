@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import clientAuth from '../clientAuth'
-
 class AddEpisode extends Component {
   
   render() {
