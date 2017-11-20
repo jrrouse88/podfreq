@@ -21,7 +21,7 @@ mongoose.connect(MONGODB_URI, (err) => {
 })
 
 //set up middle ware for deployment, morgan, and parser
-app.use(express.static(`${__dirname}/client/build`))
+//app.use(express.static(`${__dirname}/client/build`))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 
@@ -36,9 +36,9 @@ app.use('/podcasts', podcastRoutes)
 app.use('/episodes', episodeRoutes)
 
 // middleware to help with deployment
-app.use('*', (req, res) => {
-	res.sendFile(`${__dirname}/client/build/index.html`)
-})
+// app.use('*', (req, res) => {
+// 	res.sendFile(`${__dirname}/client/build/index.html`)
+// })
 
 // connect to express server
 app.listen(PORT, (err) => {

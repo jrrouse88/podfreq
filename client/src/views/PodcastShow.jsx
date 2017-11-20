@@ -39,13 +39,13 @@ class PodcastShow extends Component {
     const { episodes } = this.state
     const { currentUser } = this.state
     let add = null
-    if(currentUser) {
+    if(currentUser._id === podcast.user) {
       add = <AddEpisode {...this.state} />
     } else {
       add = null
     }
-    //console.log(currentUser._id)
-    //console.log(podcast.user)
+    console.log(currentUser._id)
+    console.log(podcast.user)
     return (
       <div className="container">
       {add}
