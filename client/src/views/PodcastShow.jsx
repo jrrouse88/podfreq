@@ -26,6 +26,18 @@ class PodcastShow extends Component {
       })
   }
 
+  componentWillReceiveProps() {
+    axios({method: 'get', url: `${this.props.location.pathname}`})
+    .then(res => {
+       //console.log(res.data)
+      this.setState({
+        podcast: res.data.podcast,
+        episodes: res.data.episodes,
+        currentUser: clientAuth.getCurrentUser()
+      })
+     })
+  }
+
   render() {
     //console.log(this.state.podcast)
     const { podcast } = this.state

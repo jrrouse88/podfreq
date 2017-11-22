@@ -25,7 +25,7 @@ class AddEpisode extends Component {
     axios({method: 'post', url:`/podcasts/${this.props.podcast._id}/episodes`, data: this.state.fields})
       .then(res => {
         this.props.history.push(`/podcasts/${this.props.podcast._id}`)
-      })
+      })    
   }
   
   render() {
