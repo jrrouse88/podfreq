@@ -22,10 +22,8 @@ class AddEpisode extends Component {
   
   onFormSubmit(evt) {
     evt.preventDefault()
-    axios({method: 'post', url:`/podcasts/${this.props.podcast._id}`, data: this.state.fields})
+    axios({method: 'post', url:`/podcasts/${this.props.podcast._id}/episodes`, data: this.state.fields})
       .then(res => {
-        //console.log(this.state.fields)
-        //console.log(res.data)
         this.props.history.push(`/podcasts/${this.props.podcast._id}`)
       })
   }

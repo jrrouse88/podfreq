@@ -40,7 +40,7 @@ class PodcastShow extends Component {
     const { currentUser } = this.state
     let add = null
     if(currentUser._id === podcast.user) {
-      add = <AddEpisode {...this.state} />
+      add = <AddEpisode {...this.state} {...this.props}/>
     } else {
       add = null
     }
