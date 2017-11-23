@@ -37,7 +37,19 @@ class PodcastShow extends Component {
       })
      })
   }
-
+  
+  deleteEpisode(id) {
+    console.log(id)
+    axios({method: 'delete', url: `/${this.state.podcast._id}/episodes/${id}`})
+      .then(res => {
+        this.setState({
+            episodes: this.state.episodes.filter((episode) => {
+              return episode._id !== id
+            })
+        })
+      })
+  }
+  
   render() {
     //console.log(this.state.podcast)
     const { podcast } = this.state
@@ -58,9 +70,23 @@ class PodcastShow extends Component {
     }
     //console.log(currentUser._id)
     //console.log(podcast.user)
+    let edit = null
+    if(currentUser._id === podcast.user) {
+      edit = <button>Edit</button>
+    } else {
+      edit = null
+    }
+
+    // let destroy = null
+    // if(currentUser._id === podcast.user) {
+    //   destroy = <button onClick={this.deleteEpisode.bind(this, episode._id)}>Delete</button>
+    // } else {
+    //   destroy = null
+    // }
+    
     return (
       <div className="container">
-      {add}
+      { add }
         <header className="castHeader">
           <img src={podcast.art} alt="" />
           <h1 className="title is-1">{podcast.title}</h1>
@@ -79,6 +105,10 @@ class PodcastShow extends Component {
                 })} className="button">▶︎</button>
                 <h1 className="level-item">{episode.name || episode.title}</h1>
                 <h2 className="level-item">{episode.description}</h2>
+                { currentUser._id === podcast.user
+                  ? <button onClick={this.deleteEpisode.bind(this, episode._id)}>Delete</button>
+                  : null
+                }
               </div>
             </section>
           )
