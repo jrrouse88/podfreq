@@ -40,7 +40,7 @@ class PodcastShow extends Component {
   
   deleteEpisode(id) {
     console.log(id)
-    axios({method: 'delete', url: `/${this.state.podcast._id}/episodes/${id}`})
+    axios({method: 'delete', url: `${this.state.podcast._id}/episodes/${id}`})
       .then(res => {
         this.setState({
             episodes: this.state.episodes.filter((episode) => {
