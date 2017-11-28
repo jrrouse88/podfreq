@@ -1,4 +1,28 @@
 /**************************
+Home Page Styles
+**************************/
+.home-body {
+  background: url(bg.jpg) no-repeat;
+  background-size: cover;
+  height: 90vh;
+}
+
+.jumbo-contain {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.jumbotron {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.featured {
+  background-color: turquoise;
+  width: 100%;
+}
+
+/**************************
 Host Styles
 **************************/
 .hosts img{
