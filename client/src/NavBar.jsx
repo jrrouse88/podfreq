@@ -4,7 +4,7 @@ import logo from './podfreq.png'
 
 const NavBar = (props) => {
   return (
-    <div className='navbar is-primary'>
+    <div className='navbar is-dark'>
       <Link to="/" className="navbar-brand"><img src={logo} alt="" /></Link>
       <div className="navbar-menu">
         <div className="navbar-end">
