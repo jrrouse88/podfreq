@@ -17,9 +17,8 @@ Home Page Styles
   margin: 0 auto;
 }
 
-.featured {
-  background-color: turquoise;
-  width: 100%;
+.btn-lg {
+  margin: 5px;
 }
 
 /**************************
