@@ -62,7 +62,7 @@ class PodcastShow extends Component {
     const { episodes } = this.state
     const { currentUser } = this.state
     let add = null
-    if(currentUser._id === podcast.user) {
+    if(currentUser && currentUser._id === podcast.user) {
       add = <AddEpisode {...this.state} {...this.props}/>
     } else {
       add = null
@@ -70,18 +70,11 @@ class PodcastShow extends Component {
     //console.log(currentUser._id)
     //console.log(podcast.user)
     let edit = null
-    if(currentUser._id === podcast.user) {
+    if(currentUser && currentUser._id === podcast.user) {
       edit = <button>Edit</button>
     } else {
       edit = null
     }
-
-    // let destroy = null
-    // if(currentUser._id === podcast.user) {
-    //   destroy = <button onClick={this.deleteEpisode.bind(this, episode._id)}>Delete</button>
-    // } else {
-    //   destroy = null
-    // }
     
     return (
       <div className="container">
@@ -102,7 +95,7 @@ class PodcastShow extends Component {
                   })} className="button">▶︎</button>
                   <h1 className="level-item">{episode.name || episode.title}</h1>
                   <h2 className="level-item">{episode.description}</h2>
-                  { currentUser._id === podcast.user
+                  { currentUser && currentUser._id === podcast.user
                     ? <button onClick={this.deleteEpisode.bind(this, episode._id)}>Delete</button>
                     : null
                   }
