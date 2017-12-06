@@ -16,6 +16,16 @@ class MyShows extends Component {
       })
   }
 
+  componentWillReceiveProps() {
+    axios({method: 'get', url: '/podcasts'})
+    .then(res => {
+       //console.log(res.data)
+      this.setState({
+        shows: res.data
+      })
+     })
+  }
+
   render() {
     const { currentUser } = this.state
     const { shows } = this.state

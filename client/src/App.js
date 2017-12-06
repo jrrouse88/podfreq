@@ -64,9 +64,9 @@ class App extends Component {
           <Route path="/podcasts" component={Shows}/>
           <Route path="/hosts" component={Hosts} />
           <Route path="/signup" component={SignUp} />
-          <Route path="/profile" render={() => {
+          <Route path="/profile" render={(props) => {
             return currentUser
-            ? <Profile />
+            ? <Profile {...props}/>
             : <Redirect to="/login" />
           }} />
           <Route path="/" component={Home} />
