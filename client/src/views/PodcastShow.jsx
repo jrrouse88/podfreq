@@ -87,31 +87,30 @@ class PodcastShow extends Component {
       <div className="container">
       { add }
         <header className="castHeader">
-          <img src={podcast.art} alt="" />
           <h1 className="title is-1">{podcast.title}</h1>
+          <img src={podcast.art} alt="" />
         </header>
-        {episodes.map(episode => {
-          return (
-            <section key={episode._id}>
-              <aside className="episodeArt">
-                <img src={episode.cover} alt=""/>
-              </aside>
-              <div className="level">
-              <button onClick={() => this.props.onPlayClick({
-                  cover: episode.art || episode.cover,
-                  name: episode.title || episode.name,
-                  musicSrc: episode.src || episode.musicSrc
-                })} className="button">▶︎</button>
-                <h1 className="level-item">{episode.name || episode.title}</h1>
-                <h2 className="level-item">{episode.description}</h2>
-                { currentUser._id === podcast.user
-                  ? <button onClick={this.deleteEpisode.bind(this, episode._id)}>Delete</button>
-                  : null
-                }
-              </div>
-            </section>
-          )
-        })}
+        <div className="episodes">
+          {episodes.map(episode => {
+            return (
+              <section key={episode._id}>
+                <div className="level">
+                <button onClick={() => this.props.onPlayClick({
+                    cover: episode.art || episode.cover,
+                    name: episode.title || episode.name,
+                    musicSrc: episode.src || episode.musicSrc
+                  })} className="button">▶︎</button>
+                  <h1 className="level-item">{episode.name || episode.title}</h1>
+                  <h2 className="level-item">{episode.description}</h2>
+                  { currentUser._id === podcast.user
+                    ? <button onClick={this.deleteEpisode.bind(this, episode._id)}>Delete</button>
+                    : null
+                  }
+                </div>
+              </section>
+            )
+          })}
+        </div>
         {/* <button onClick={() => this.props.onPlayClick({
           cover:"http://www.lijinke.cn/music/1387583682387727.jpg",
           currentTime:10.211519,

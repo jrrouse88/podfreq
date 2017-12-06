@@ -34,6 +34,16 @@ Host Styles
 }
 
 /**************************
+Profile Styles
+**************************/
+.oneShow {
+  margin: 20px;
+}
+
+.oneShow img {
+  max-height: 300px;
+}
+/**************************
 Show List Styles
 **************************/
 .show img {
@@ -45,14 +55,20 @@ Show View Styles
 **************************/
 .castHeader img {
   max-height: 250px;
+  float: right;
 }
 
 .castHeader h1 {
-  float: right;
+  display: inline-block;
 }
 
 .level button {
   border-radius: 50%;
+}
+
+.episodes {
+  clear: both;
+  padding-top: 10px;
 }
 /**************************
 Player Styles
